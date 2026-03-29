@@ -8,10 +8,89 @@ To write a program to predict car prices using a linear regression model and tes
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+
+1. **Start**
+
+2. **Import Libraries**
+
+   * Import required libraries:
+     `pandas`, `numpy`, `sklearn`, `matplotlib`, `seaborn`, `statsmodels`
+
+3. **Load Dataset**
+
+   * Read the dataset file `CarPrice_Assignment.csv` into a DataFrame.
+
+4. **Select Features and Target**
+
+   * Choose independent variables (features):
+     `enginesize`, `horsepower`, `citympg`, `highwaympg`
+   * Choose dependent variable (target):
+     `price`
+
+5. **Split Dataset**
+
+   * Divide the dataset into:
+
+     * Training set (80%)
+     * Testing set (20%)
+   * Use `train_test_split()` with `random_state=42`
+
+6. **Feature Scaling**
+
+   * Initialize `StandardScaler`
+   * Fit scaler on training data
+   * Transform both training and testing feature sets
+
+7. **Train Model**
+
+   * Initialize `LinearRegression` model
+   * Fit the model using scaled training data (`X_train_scaled`, `Y_train`)
+
+8. **Make Predictions**
+
+   * Predict target values using test data (`X_test_scaled`)
+   * Store predictions in `Y_pred`
+
+9. **Display Model Coefficients**
+
+   * Print:
+
+     * Coefficients for each feature
+     * Intercept value
+
+10. **Evaluate Model Performance**
+
+* Calculate and print:
+
+  * Mean Squared Error (MSE)
+  * Mean Absolute Error (MAE)
+  * Root Mean Squared Error (RMSE)
+  * R-squared score
+
+11. **Check Linearity**
+
+* Plot Actual vs Predicted values using scatter plot
+* Draw a reference diagonal line
+
+12. **Check Independence of Errors**
+
+* Compute residuals:
+  `residuals = Y_test - Y_pred`
+* Calculate Durbin-Watson statistic
+* Interpret value (≈2 indicates no autocorrelation)
+
+13. **Check Homoscedasticity**
+
+* Plot residuals vs predicted values using `residplot`
+* Observe spread of residuals
+
+14. **Check Normality of Residuals**
+
+* Plot histogram with KDE of residuals
+* Generate Q-Q plot using `statsmodels`
+
+15. **End**
+
 
 ## Program:
 ```
